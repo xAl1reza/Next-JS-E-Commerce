@@ -1,0 +1,29 @@
+{
+  "name": "next-ecommerce",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@bprogress/next": "^3.2.12",
+    "@reduxjs/toolkit": "^2.8.2",
+    "bootstrap-icons": "^1.11.3",
+    "leaflet": "^1.9.4",
+    "next": "15.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-tabs": "^6.1.0",
+    "react-toastify": "^11.0.5",
+    "redux-persist": "^6.0.0",
+    "swiper": "^11.2.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  }
+}
