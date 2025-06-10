@@ -1,8 +1,6 @@
 # Laravel backend
 /Back-End/vendor
 /Back-End/storage/*.key
-/Back-End/.env
-/Back-End/.env.*
 /Back-End/public/storage
 /Back-End/public/hot
 /Back-End/public/mix-manifest.json
