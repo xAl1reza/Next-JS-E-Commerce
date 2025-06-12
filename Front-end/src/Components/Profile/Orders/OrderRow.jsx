@@ -51,19 +51,21 @@ export default function OrderButton({ order }) {
           <tbody>
             {order.order_items.map((item) => (
               <tr key={item.id} className="bg-gray-100 dark:bg-gray-950">
-                <td className="px-1 py-1 rounded-r-lg">
+                <td className="px-4 py-2 rounded-r-lg">
                   <Image
                     width={80}
                     height={53}
                     src={item.product_primary_image}
-                    className="w-16 md:w-32 max-w-full max-h-full rounded-md"
+                    className="w-16 md:w-32 max-w-full max-h-full rounded-md mx-auto"
                     alt="product"
                   />
                 </td>
-                <td>{item.product_name}</td>
-                <td>{item.price.toLocaleString()} تومان</td>
-                <td>{item.quantity}</td>
-                <td className="rounded-l-lg">
+                <td className="px-4 py-2">{item.product_name}</td>
+                <td className="px-4 py-2">
+                  {item.price.toLocaleString()} تومان
+                </td>
+                <td className="px-4 py-2">{item.quantity}</td>
+                <td className="px-4 py-2 rounded-l-lg">
                   {item.subtotal.toLocaleString()} تومان
                 </td>
               </tr>

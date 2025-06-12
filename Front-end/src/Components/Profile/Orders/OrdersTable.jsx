@@ -3,7 +3,7 @@ import { cookies } from 'next/headers'
 import OrderButton from './OrderRow'
 import Paginate from './Paginate'
 
-export default async function OrdersTable({params}) {
+export default async function OrdersTable({ params }) {
   const cookiesStore = await cookies()
   const token = cookiesStore.get('token')
   const data = await getFetch(`/profile/orders?${params}`, {
@@ -16,25 +16,25 @@ export default async function OrdersTable({params}) {
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="font-VazirLight text-sm text-gray-700 bg-gray-300 dark:bg-gray-900 dark:text-gray-200">
             <tr>
-              <th scope="col" className="px-16 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 <span>شماره سفارش</span>
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 آدرس
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 وضعیت
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 وضعیت پرداخت
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 قیمت کل
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 تاریخ
               </th>
-              <th scope="col" className="px-6 py-3"></th>
+              <th scope="col" className="px-6 py-3 text-center"></th>
             </tr>
           </thead>
           <tbody>
@@ -47,7 +47,7 @@ export default async function OrdersTable({params}) {
                     : 'bg-gray-300 dark:bg-gray-800'
                 } border-b text-black dark:text-white dark:border-gray-700 border-gray-200 transition-all`}
               >
-                <td className="p-4 text-center">{order.id}</td>
+                <td className="px-6 py-4 text-center">{order.id}</td>
                 <td className="px-6 py-4 text-center">{order.address_title}</td>
                 <td
                   className={`px-6 py-4 text-center ${
@@ -79,7 +79,7 @@ export default async function OrdersTable({params}) {
           </tbody>
         </table>
       </div>
-      <Paginate links={data.meta.links}/>
+      <Paginate links={data.meta.links} />
     </>
   )
 }

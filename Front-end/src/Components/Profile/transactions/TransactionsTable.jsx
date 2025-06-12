@@ -11,57 +11,42 @@ export default async function TransactionsTable({ params }) {
 
   return (
     <>
-      <div className="relative overflow-x-auto sm:rounded-lg">
+      <div className="relative overflow-x-auto sm:rounded-lg mt-6">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="font-VazirLight text-sm text-gray-700 bg-gray-300 dark:bg-gray-900 dark:text-gray-200">
             <tr>
-              <th scope="col" className="px-16 py-3">
-                <span>شماره سفارش</span>
+              <th scope="col" className="px-6 py-3 text-center">
+                <span>نام</span>
               </th>
-              <th scope="col" className="px-6 py-3">
-                مبلغ
+              <th scope="col" className="px-6 py-3 text-center">
+                ایمیل
               </th>
-              <th scope="col" className="px-6 py-3">
-                وضعیت
+              <th scope="col" className="px-6 py-3 text-center">
+                شماره تلفن
               </th>
-              <th scope="col" className="px-6 py-3">
-                شماره پیگیری
+              <th scope="col" className="px-6 py-3 text-center">
+                تاریخ عضویت
               </th>
-
-              <th scope="col" className="px-6 py-3">
-                تاریخ
+              <th scope="col" className="px-6 py-3 text-center">
+                عملیات
               </th>
             </tr>
           </thead>
           <tbody>
-            {data.transactions.map((transaction, i) => (
-              <tr
-                key={transaction.id}
-                className={`${
-                  i % 2 == 0
-                    ? 'bg-white dark:bg-gray-950'
-                    : 'bg-gray-300 dark:bg-gray-800'
-                } border-b text-black dark:text-white dark:border-gray-700 border-gray-200 transition-all`}
-              >
-                <td className="p-4 text-center">{transaction.id}</td>
-                <td className="px-6 py-4 text-center">{transaction.amount}</td>
-                <td
-                  className={`px-6 py-4 text-center ${
-                    transaction.status == 'موفق'
-                      ? 'text-green-600'
-                      : 'text-red-600'
-                  }`}
-                >
-                  {transaction.status}
-                </td>
-                <td className="px-6 py-4 text-center">
-                  {transaction.trans_id}
-                </td>
-                <td className="px-6 py-4 text-center">
-                  {transaction.created_at}
-                </td>
-              </tr>
-            ))}
+            <tr className="bg-white dark:bg-gray-950 border-b text-black dark:text-white dark:border-gray-700 border-gray-200 transition-all">
+              <td className="px-6 py-4 text-center">12345</td>
+              <td className="px-6 py-4 text-center">250,000 تومان</td>
+              <td className="px-6 py-4 text-center text-green-600">موفق</td>
+              <td className="px-6 py-4 text-center">TRX987654321</td>
+              <td className="px-6 py-4 text-center">1403/03/22</td>
+            </tr>
+            <tr className="bg-gray-300 dark:bg-gray-800 border-b text-black dark:text-white dark:border-gray-700 border-gray-200 transition-all">
+              <td className="px-6 py-4 text-center">67890</td>
+              <td className="px-6 py-4 text-center">180,000 تومان</td>
+              <td className="px-6 py-4 text-center text-red-600">ناموفق</td>
+              <td className="px-6 py-4 text-center">TRX123456789</td>
+              <td className="px-6 py-4 text-center">1403/03/20</td>
+            </tr>
           </tbody>
         </table>
       </div>
